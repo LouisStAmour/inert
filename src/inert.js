@@ -17,6 +17,7 @@
 
 import matches from 'dom-matches';
 import contains from 'node-contains';
+import MutationObserver from 'mutation-observer';
 
 (function(document) {
 /** @type {string} */
