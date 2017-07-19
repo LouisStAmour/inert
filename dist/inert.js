@@ -838,7 +838,7 @@ var createClass = function () {
             activeElement = root.activeElement;
           }
         }
-        if (index$1(startNode, activeElement)) {
+        if (activeElement !== null && index$1(startNode, activeElement)) {
           activeElement.blur();
         }
       }

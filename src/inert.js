@@ -132,7 +132,7 @@ class InertRoot {
         activeElement = root.activeElement;
       }
     }
-    if (contains(startNode, activeElement)) {
+    if (activeElement !== null && contains(startNode, activeElement)) {
       activeElement.blur();
     }
   }
