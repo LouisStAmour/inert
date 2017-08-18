@@ -16,7 +16,6 @@
  */
 
 import matches from 'dom-matches';
-import contains from 'node-contains';
 import MutationObserver from 'mutation-observer';
 
 (function(document) {
@@ -132,7 +131,7 @@ class InertRoot {
         activeElement = root.activeElement;
       }
     }
-    if (activeElement !== null && contains(startNode, activeElement)) {
+    if (contains(startNode, activeElement)) {
       activeElement.blur();
     }
   }
@@ -670,6 +669,20 @@ function addInertStyle(node) {
                       '  -ms-user-select: none;\n' +
                       '}\n';
   node.appendChild(style);
+}
+
+/**
+ * `Node#contains()` polyfill.
+ *
+ * See: http://compatibility.shwups-cms.ch/en/polyfills/?&id=1
+ *
+ * @param {Node} node
+ * @param {Node} other
+ * @return {Boolean}
+ * @public
+ */
+function contains(node, other) {
+  return other && (node === other || !!(node.compareDocumentPosition(other) & 16) );
 }
 
 const inertManager = new InertManager(document);

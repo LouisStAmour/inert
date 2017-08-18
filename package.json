@@ -32,7 +32,6 @@
   "homepage": "https://github.com/WICG/inert#readme",
   "dependencies": {
     "dom-matches": "^2.0.0",
-    "node-contains": "^1.0.0",
     "mutation-observer": "^1.0.2"
   },
   "devDependencies": {
